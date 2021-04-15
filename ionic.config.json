@@ -1,0 +1,7 @@
+{
+  "name": "uit-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

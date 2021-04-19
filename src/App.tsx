@@ -9,10 +9,12 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+import { ellipsisHorizontalOutline, giftOutline, gridOutline, handLeftOutline, notificationsOutline, square, timeOutline, triangle } from 'ionicons/icons';
+import Home from './pages/Home';
+import Order from './pages/Order';
+import History from './pages/History';
+import Notification from './pages/Notification';
+import Personal from './pages/Personal';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -38,31 +40,45 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/Home">
+            <Home/>
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/Order">
+            <Order/>
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route path="/History">
+            <History/>
+          </Route>
+          <Route path="/Notification">
+            <Notification/>
+          </Route>
+          <Route path="/Personal">
+            <Personal/>
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/Home" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+          <IonTabButton tab="Home" href="/Home">
+              <IonIcon icon={gridOutline} />
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="Order" href="/Order">
+            <IonIcon icon={handLeftOutline} />
+            <IonLabel>Đặt Món</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="History" href="/History">
+            <IonIcon icon={timeOutline} />
+            <IonLabel>Lịch sử GD</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="Notification" href="/Notification">
+            <IonIcon icon={notificationsOutline} />
+            <IonLabel>Thông báo</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="Personal" href="/Personal">
+            <IonIcon icon={ellipsisHorizontalOutline} />
+            <IonLabel>Cá nhân</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

@@ -1,4 +1,4 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
   IonIcon,
@@ -7,76 +7,87 @@ import {
   IonTabBar,
   IonTabButton,
   IonTabs,
-} from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import { ellipsisHorizontalOutline, giftOutline, gridOutline, handLeftOutline, notificationsOutline, square, timeOutline, triangle } from 'ionicons/icons';
-import Home from './pages/Home';
-import Order from './pages/Order';
-import History from './pages/History';
-import Notification from './pages/Notification';
-import Personal from './pages/Personal';
+} from "@ionic/react";
+import { IonReactRouter } from "@ionic/react-router";
+import {
+  ellipse,
+  square,
+  triangle,
+  homeOutline,
+  pizzaOutline,
+  ellipsisHorizontalOutline,
+  notificationsOutline,
+  calendarOutline,
+  timeOutline,
+  notificationsCircleOutline,
+} from "ionicons/icons";
+import Tab1 from "./pages/Tab1";
+import Tab2 from "./pages/Tab2";
+import Tab3 from "./pages/Tab3";
+import Tab4 from "./pages/Tab4";
+import Tab5 from "./pages/Tab5";
 
 /* Core CSS required for Ionic components to work properly */
-import '@ionic/react/css/core.css';
+import "@ionic/react/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
-import '@ionic/react/css/normalize.css';
-import '@ionic/react/css/structure.css';
-import '@ionic/react/css/typography.css';
+import "@ionic/react/css/normalize.css";
+import "@ionic/react/css/structure.css";
+import "@ionic/react/css/typography.css";
 
 /* Optional CSS utils that can be commented out */
-import '@ionic/react/css/padding.css';
-import '@ionic/react/css/float-elements.css';
-import '@ionic/react/css/text-alignment.css';
-import '@ionic/react/css/text-transformation.css';
-import '@ionic/react/css/flex-utils.css';
-import '@ionic/react/css/display.css';
+import "@ionic/react/css/padding.css";
+import "@ionic/react/css/float-elements.css";
+import "@ionic/react/css/text-alignment.css";
+import "@ionic/react/css/text-transformation.css";
+import "@ionic/react/css/flex-utils.css";
+import "@ionic/react/css/display.css";
 
 /* Theme variables */
-import './theme/variables.css';
+import "./theme/variables.css";
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/Home">
-            <Home/>
+          <Route exact path="/tab1">
+            <Tab1 />
           </Route>
-          <Route exact path="/Order">
-            <Order/>
+          <Route exact path="/tab2">
+            <Tab2 />
           </Route>
-          <Route path="/History">
-            <History/>
+          <Route path="/tab3">
+            <Tab3 />
           </Route>
-          <Route path="/Notification">
-            <Notification/>
+          <Route path="/tab4">
+            <Tab4 />
           </Route>
-          <Route path="/Personal">
-            <Personal/>
+          <Route path="/tab5">
+            <Tab5 />
           </Route>
           <Route exact path="/">
-            <Redirect to="/Home" />
+            <Redirect to="/tab1" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="Home" href="/Home">
-              <IonIcon icon={gridOutline} />
+          <IonTabButton tab="tab1" href="/tab1">
+            <IonIcon icon={homeOutline} />
             <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="Order" href="/Order">
-            <IonIcon icon={handLeftOutline} />
-            <IonLabel>Đặt Món</IonLabel>
+          <IonTabButton tab="tab2" href="/tab2">
+            <IonIcon icon={pizzaOutline} />
+            <IonLabel>Đặt món</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="History" href="/History">
+          <IonTabButton tab="tab3" href="/tab3">
             <IonIcon icon={timeOutline} />
             <IonLabel>Lịch sử GD</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="Notification" href="/Notification">
-            <IonIcon icon={notificationsOutline} />
+          <IonTabButton tab="tab4" href="/tab4">
+            <IonIcon icon={notificationsCircleOutline} />
             <IonLabel>Thông báo</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="Personal" href="/Personal">
+          <IonTabButton tab="tab5" href="/tab5">
             <IonIcon icon={ellipsisHorizontalOutline} />
             <IonLabel>Cá nhân</IonLabel>
           </IonTabButton>

@@ -1,0 +1,45 @@
+.d-flex{
+    display: flex;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.align-items-center{
+    align-items: center;
+}
+.title_home{
+    color: #444;
+    font-weight: 500;
+    
+    text-shadow: 1.2px 1.2px 12px rgba(0,0,0,0.3) !important;
+}
+.searchbar-input.sc-ion-searchbar-md {
+    border-radius: 25px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #7f8490;
+    background-color: #bababa;
+    -webkit-box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+
+.img_notify{
+    border-radius: 100%;
+}
+#cart-btn {
+    position: relative;
+ }
+ .icon_chat{
+     font-size: 24px  !important;
+ }
+ #cart-badge {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translateY(-50%);
+    background-color: red;
+    border-radius: 100%;
+ }

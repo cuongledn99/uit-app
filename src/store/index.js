@@ -1,6 +1,6 @@
 import { createStore, thunk, action } from "easy-peasy";
 import axios from "axios";
-import { fetchTransactions } from './../api/transactions'
+import { fetchTransactions, fetchBalance } from './../api/transactions'
 
 
 
@@ -8,6 +8,9 @@ import { fetchTransactions } from './../api/transactions'
 
 const store = createStore({
   globalStore: {
+    balance: {
+      data: 0
+    },
     transactions: [],
     notifications: []
   },
@@ -22,6 +25,15 @@ const store = createStore({
     // console.log(data);
   }),
 
+  setBalance: action((state, payload) => {
+    state.globalStore.balance = {
+      data: payload
+    }
+  }),
+  fetchBalance: thunk(async (actions) => {
+    const data = await fetchBalance("6080319786d58936b25c5a21")
+    actions.setBalance(data)
+  })
 
 });
 
